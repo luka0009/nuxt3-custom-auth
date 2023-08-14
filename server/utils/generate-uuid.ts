@@ -1,9 +1,9 @@
-import { customAlphabet } from "nanoid";
-import * as nanoidDictionary from "nanoid-dictionary";
+import { customAlphabet } from 'nanoid'
+import nanoidDictionary from 'nanoid-dictionary'
 
 function generateUUID(length: number) {
-	const generateUUID = customAlphabet(nanoidDictionary.numbers, length);
-	return generateUUID();
+    const generateUUID = customAlphabet(nanoidDictionary.numbers, length)
+    return generateUUID()
 }
 
-export default generateUUID;
+export default generateUUID
