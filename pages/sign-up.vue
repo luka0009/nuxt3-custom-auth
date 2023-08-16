@@ -69,7 +69,7 @@
 						<FormKit
 							type="text"
 							label="Last Name"
-							placeholder="Wick"
+							placeholder="Doe"
 							name="lastName"
 							validation="required:trim|alpha_spaces:latin"
 						/>
@@ -80,7 +80,7 @@
 					<FormKit
 						type="email"
 						label="Email"
-						placeholder="johnwick@gmail.com"
+						placeholder="someone@example.com"
 						name="email"
 						validation="required:trim|email"
 					/>
