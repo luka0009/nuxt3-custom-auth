@@ -2,7 +2,20 @@
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	pages: true,
-	modules: ["@formkit/nuxt", "@nuxtjs/tailwindcss"],
+	modules: [
+		"@formkit/nuxt",
+		"@nuxtjs/tailwindcss",
+		[
+			"@pinia/nuxt",
+			{
+				autoImports: [
+					"acceptHMRUpdate",
+					"defineStore",
+					["defineStore", "definePiniaStore"],
+				],
+			},
+		],
+	],
 	runtimeConfig: {
 		MONGO_URI: process.env.MONGO_URI,
 		TOKEN_SECRET: process.env.TOKEN_SECRET,
@@ -14,8 +27,8 @@ export default defineNuxtConfig({
 			ELASTIC_URL: "https://api.elasticemail.com/v4",
 		},
 	},
-	imports: {
-		dirs: ["server/models"],
+	alias: {
+		pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs",
 	},
 	nitro: {
 		plugins: ["~/server/plugins/mongoDB.ts"],
